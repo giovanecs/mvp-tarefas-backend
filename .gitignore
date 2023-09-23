@@ -1,0 +1,7 @@
+database/
+env/
+log/
+.idea/
+__pycache__/
+model/__pycache__/
+schemas/__pycache__/
