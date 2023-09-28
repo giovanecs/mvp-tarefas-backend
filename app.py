@@ -124,10 +124,10 @@ def get_tarefa(query: TarefaBuscaIdSchema):
 
     if not tarefa:
         error_msg = "tarefa não encontrada."
-        logger.warning(f"Erro ao deletar tarefa #{tarefa_id}, {error_msg}")
+        logger.warning(f"Erro ao consultar tarefa #{tarefa_id}, {error_msg}")
         return {"mesage": error_msg}, 404
     else:
-        logger.debug(f"tareafa encontrada: '{tarefa.descricao}'")
+        logger.debug(f"tarefa encontrada: '{tarefa.descricao}'")
         return apresenta_tarefa(tarefa), 200
     
 @app.post("/tarefa/add", tags=[tarefa_tag],
