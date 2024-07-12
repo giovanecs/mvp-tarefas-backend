@@ -2,9 +2,7 @@
 
 # TAREFAS API
 
-Este pequeno projeto fez parte da avalicao da Sprint: **Desenvolvimento Full Stack Básico** 
-
-*Este mesmo projeto esta sendo utilizado como parte da avalicao da Sprint: **Arquitetura Software**
+Este pequeno projeto fez parte da avalicao da Sprint: **Arquitetura Software**
 
 O objetivo aqui é ilutsrar o conteúdo apresentado ao longo das disciplinas.
 
