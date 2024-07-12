@@ -10,6 +10,8 @@ from sqlalchemy import and_
 
 from model import Session, Tarefa
 
+import requests
+
 info = Info(title="API - Minhas Tarefas", version="1.0.0")
 app = OpenAPI(__name__, info=info)
 CORS(app)
@@ -165,6 +167,10 @@ def iniciar_tarefa(form: AtualizarTarefaSchema):
 
     Retorna uma representação da tarefa.
     """
+    today = datetime.today().date()
+    holiday_name = is_holiday(today)
+    if holiday_name:
+        return {"message": f"Não é possível iniciar a tarefa no feriado: {holiday_name}"}, 400
 
     session = Session()
     tarefa = session.query(Tarefa).filter_by(id=form.id).first()
@@ -219,4 +225,13 @@ def del_tarefa(query: TarefaBuscaIdSchema):
         error_msg = "tarefa não encontrada."
         logger.warning(f"Erro ao deletar tarefa #{tarefa_id}, {error_msg}")
         return {"mesage": error_msg}, 404
+    
+# Verificar se uma data é feriado
+def is_holiday(date):
+    response = requests.get('https://brasilapi.com.br/api/feriados/v1/2024')
+    holidays = response.json()
+    for holiday in holidays:
+        if holiday['date'] == date.strftime('%Y-%m-%d'):
+            return holiday['name']
+    return None
     
