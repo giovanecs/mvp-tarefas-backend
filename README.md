@@ -1,12 +1,26 @@
-# Minha API
+# POS-GRADUAÇÃO ENGENHARIA SOFTWARE PUC/RIO
 
-Este pequeno projeto faz parte da avalicao da Disciplina **Desenvolvimento Full Stack Básico** 
+# TAREFAS API
 
-O objetivo aqui é ilutsrar o conteúdo apresentado ao longo da disciplina.
+Este pequeno projeto fez parte da avalicao da Sprint: **Desenvolvimento Full Stack Básico** 
 
----
-## Como executar 
+*Este mesmo projeto esta sendo utilizado como parte da avalicao da Sprint: **Arquitetura Software**
 
+O objetivo aqui é ilutsrar o conteúdo apresentado ao longo das disciplinas.
+
+## Como executar
+
+Você pode executar o projeto de duas formas, localmente ou utilizando docker
+
+### Clone o repositório:
+
+git clone (https://github.com/giovanecs/mvp-tarefas-backend.git)
+
+### Acesso o diretório do projeto
+
+cd mvp-tarefas-backend
+
+# Executando localmente 
 
 Será necessário ter todas as libs python listadas no `requirements.txt` instaladas.
 Após clonar o repositório, é necessário ir ao diretório raiz, pelo terminal, para poder executar os comandos descritos abaixo.
@@ -33,3 +47,17 @@ automaticamente após uma mudança no código fonte.
 ```
 
 Abra o [http://localhost:5000/#/](http://localhost:5000/#/) no navegador para verificar o status da API em execução.
+
+# Executando o projeto com Docker
+
+## Construção da Imagem
+
+### Para construir a imagem Docker, execute o seguinte comando na raiz do projeto:
+
+docker build -t mvp-tarefas-backend .
+
+## Executar o Contêiner
+
+### Para executar o contêiner Docker, execute o seguinte comando:
+
+docker run -d --name mvp-tarefas-backend -p 5000:5000 mvp-tarefas-backend
