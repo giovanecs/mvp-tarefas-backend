@@ -1,5 +1,5 @@
 from datetime import datetime
-from flask import redirect
+from flask import Flask, redirect
 from flask_openapi3 import OpenAPI, Info, Tag
 
 from logger import logger
@@ -11,6 +11,8 @@ from sqlalchemy import and_
 from model import Session, Tarefa
 
 import requests
+
+app = Flask(__name__)
 
 info = Info(title="API - Minhas Tarefas", version="1.0.0")
 app = OpenAPI(__name__, info=info)
@@ -234,4 +236,6 @@ def is_holiday(date):
         if holiday['date'] == date.strftime('%Y-%m-%d'):
             return holiday['name']
     return None
-    
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
