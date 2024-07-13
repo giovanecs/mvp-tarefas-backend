@@ -12,7 +12,7 @@ Você pode executar o projeto de duas formas, localmente ou utilizando docker
 
 ### Clone o repositório:
 
-git clone (https://github.com/giovanecs/mvp-tarefas-backend.git)
+git clone https://github.com/giovanecs/mvp-tarefas-backend.git
 
 ### Acesso o diretório do projeto
 
